@@ -1,0 +1,21 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: El directorio Intermediate no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Intermediate.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+  Application.cpp
+Application.obj : error LNK2019: símbolo externo _gladLoadGLLoader sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwInit sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwTerminate sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwWindowHint sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwCreateWindow sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwWindowShouldClose sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwSetWindowShouldClose sin resolver al que se hace referencia en la función "void __cdecl processInput(struct GLFWwindow *)" (?processInput@@YAXPAUGLFWwindow@@@Z)
+Application.obj : error LNK2019: símbolo externo _glfwSetFramebufferSizeCallback sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwPollEvents sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwGetKey sin resolver al que se hace referencia en la función "void __cdecl processInput(struct GLFWwindow *)" (?processInput@@YAXPAUGLFWwindow@@@Z)
+Application.obj : error LNK2019: símbolo externo _glfwMakeContextCurrent sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwSwapBuffers sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2019: símbolo externo _glfwGetProcAddress sin resolver al que se hace referencia en la función _main
+Application.obj : error LNK2001: símbolo externo _glad_glClear sin resolver
+Application.obj : error LNK2001: símbolo externo _glad_glClearColor sin resolver
+Application.obj : error LNK2001: símbolo externo _glad_glViewport sin resolver
+C:\dev\OpenGL\Dependencies\libs\glfw3.lib : warning LNK4272: el tipo de máquina de biblioteca 'x64' está en conflicto con el tipo de máquina de destino 'x86'
+C:\dev\OpenGL\bin\Debug\Win32\OpenGL.exe : fatal error LNK1120: 16 externos sin resolver
