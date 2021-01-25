@@ -62,13 +62,16 @@ void ShaderProgram::Use()
 	glUseProgram(this->id);
 }
 
-void ShaderProgram::SetUniform(const std::string & name)
+template <typename T>
+void ShaderProgram::SetUniform(const std::string & name, T value)
 {
-	glUniform1i(glGetUniformLocation(this->id, name.c_str()), this->height);
-	this->height += 1;
-
+	if (typeid(value) == typeid(float))
+		glUniform1f(glGetUniformLocation(this->id, name.c_str()), value);
+	else if (typeid(value) == typeid(int))
+		glUniform1i(glGetUniformLocation(this->id, name.c_str()), value);
+	else
 	#ifdef DEBUG
-		std::cout << "\t[DEBUG] UNIFORM " << name.c_str() << " SET at height " << this->height - 1 << "\n";
+		std::cout << "[ERROR] AT SET " << name.c_str() << " UNIFORM (not valid type)\n";
 	#endif // DEBUG
 
 }
@@ -76,26 +79,25 @@ void ShaderProgram::SetUniform(const std::string & name)
 void ShaderProgram::TransformCoords(glm::mat4 transform, const char* name)
 {
 	int transformLoc = glGetUniformLocation(this->id, name);
-
 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
-	
-	/*
-	if (name == "model" || name == "projection")
-		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
-	else if (name == "view")
-		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, &transform[0][0]);
-	else
-		std::cout << "[ERROR] No match for transformation: " << name << " finded" << "\n";
-	*/
 
 }
 
 template <typename T>
-void ShaderProgram::SetUniform(const std::string &name, T* value)
+void ShaderProgram::SetUniform(const std::string &name, T* value, unsigned int arrLength)
 {
-	bool* aux;
-	if (typeid(value) == typeid(aux))
+	if(arrLength == 4)
 		glUniform4f(glGetUniformLocation(this->id, name.c_str()), value[0], value[1], value[2], value[3]);
+	else if(arrLength == 3)
+		glUniform3f(glGetUniformLocation(this->id, name.c_str()), value[0], value[1], value[2]);
 	else
-		glUniform4f(glGetUniformLocation(this->id, name.c_str()), value[0], value[1], value[2], value[3]);
+	#ifdef DEBUG
+			std::cout << "\t[DEBUG] UNIFORM " << name.c_str() << " error\n";
+	#endif // DEBUG
+}
+
+template<typename T>
+void ShaderProgram::SetUniform(const std::string & name, T value0, T value1, T value2)
+{
+	glUniform3f(glGetUniformLocation(this->id, name.c_str()), value0, value1, value2);
 }

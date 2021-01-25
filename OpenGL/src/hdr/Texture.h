@@ -13,6 +13,11 @@ public:
 	Texture();
 	~Texture();
 
+	enum Channels {
+		rgb = GL_RGB,
+		rgba = GL_RGBA
+	};
+
 	void AddTexture(const std::string path, unsigned int channel, bool flip);
 	void Active(unsigned int id);
 };

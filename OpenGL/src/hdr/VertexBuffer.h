@@ -8,7 +8,7 @@ private:
 	unsigned int offSet = 0;
 public:
 	
-	//Receives the number of vectors inside one vertex
+	//Receives the number of vectors inside one vertex buffer
 	VertexBuffer(unsigned int numOfVec) : ElementBuffer(numOfVec)
 	{
 		#ifdef DEBUG
