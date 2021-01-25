@@ -90,9 +90,6 @@ int main()
 	lightedProgram->SetUniform("light.diffuse",  0.5f, 0.5f, 0.5f);
 	lightedProgram->SetUniform("light.specular", 1.0f, 1.0f, 1.0f);
 
-	lightedProgram->SetUniform("material.ambient",   1.0f, 0.5f, 0.31f);
-	lightedProgram->SetUniform("material.diffuse",   1.0f, 0.5f, 0.31f);
-	lightedProgram->SetUniform("material.specular",  0.5f, 0.5f, 0.5f);
 	lightedProgram->SetUniform("material.shininess", 32.0f);
 
 	lightProgram->Use();
