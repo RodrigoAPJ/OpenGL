@@ -81,16 +81,42 @@ int main()
 	lightedProgram->Use();
 	
 	lightedProgram->SetUniform("material.diffuse", 0);
-	lightedProgram->SetUniform("material.diffuse", 1);
+	lightedProgram->SetUniform("material.specular", 1);
+	lightedProgram->SetUniform("material.shininess", 32.0f);
+
+	lightedProgram->SetUniform("dirLight.direction", -0.2f, -1.0f, -0.3f);
+	lightedProgram->SetUniform("dirLight.ambient",    0.2f, 0.2f, 0.2f);
+	lightedProgram->SetUniform("dirLight.diffuse",    0.5f, 0.5f, 0.5f);
+	lightedProgram->SetUniform("dirLight.specular",   1.0f, 1.0f, 1.0f);
 
 	container.Active(0);
 	container.Active(1);
 
-	lightedProgram->SetUniform("light.ambient",  0.2f, 0.2f, 0.2f);
-	lightedProgram->SetUniform("light.diffuse",  0.5f, 0.5f, 0.5f);
-	lightedProgram->SetUniform("light.specular", 1.0f, 1.0f, 1.0f);
+	for (unsigned int i = 0; i < 4; i++)
+	{
+		std::string aux = "pointLight[" + std::to_string(i) + "]";
+		lightedProgram->SetUniform(aux+".ambient", 0.2f, 0.2f, 0.2f);
+		lightedProgram->SetUniform(aux+".diffuse", 0.5f, 0.5f, 0.5f);
+		lightedProgram->SetUniform(aux+".specular", 1.0f, 1.0f, 1.0f);
 
-	lightedProgram->SetUniform("material.shininess", 32.0f);
+		lightedProgram->SetUniform(aux+".constant",  1.0f);
+		lightedProgram->SetUniform(aux+".linear",    0.09f);
+		lightedProgram->SetUniform(aux+".quadratic", 0.032f);
+	}
+
+	lightedProgram->SetUniform("spotLight.ambient",  0.2f, 0.2f, 0.2f);
+	lightedProgram->SetUniform("spotLight.diffuse",  0.5f, 0.5f, 0.5f);
+	lightedProgram->SetUniform("spotLight.specular", 1.0f, 1.0f, 1.0f);
+
+	lightedProgram->SetUniform("spotLight.constant",  1.0f);
+	lightedProgram->SetUniform("spotLight.linear",    0.09f);
+	lightedProgram->SetUniform("spotLight.quadratic", 0.032f);
+
+	float FL_cutOff = glm::cos(glm::radians(12.5f));
+	float FL_outerCutOff = glm::cos(glm::radians(16.5f));
+	lightedProgram->SetUniform("spotLight.cutOff", FL_cutOff);
+	lightedProgram->SetUniform("spotLight.outerCutOff", FL_outerCutOff);
+
 
 	lightProgram->Use();
 	lightProgram->SetUniform("light.ambient",  0.2f, 0.2f, 0.2f);
@@ -195,6 +221,14 @@ int main()
 		glm::vec3(1.3f, 1.0f, 1.5f)
 	};
 
+
+	glm::vec3 pointLightPositions[] = {
+		glm::vec3(0.7f,  0.2f,  2.0f),
+		glm::vec3(2.3f, -3.3f, -4.0f),
+		glm::vec3(-4.0f,  2.0f, -12.0f),
+		glm::vec3(0.0f,  0.0f, -3.0f)
+	};
+
 	VertexArray*   lightVAO = new VertexArray();
 	ElementBuffer* lightVBO = new VertexBuffer(8);
 	ElementBuffer* lightEBO = new ElementBuffer();
@@ -235,6 +269,7 @@ int main()
 	float lastFrame = 0.0f;
 	float r = 10.0f;
 
+
 	while (!glfwWindowShouldClose(window))
 	{
 		time = glfwGetTime();
@@ -246,45 +281,64 @@ int main()
 		// render
 		glClearColor(0.3f, 0.2f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		glm::vec3 lightPos = cubePositions[1] + glm::vec3(r*cos(time), 0, r*sin(time));
-		float auxCameraPos[] = { camera.position.x, camera.position.y, camera.position.z };
-
+		
+		
 		lightedProgram->Use();
 
-		lightedProgram->SetUniform("light.position", lightPos.x, lightPos.y, lightPos.z);
-		lightedProgram->SetUniform("viewPos", auxCameraPos, 3);
+		lightedProgram->SetUniform("viewPos", camera.position.x, camera.position.y, camera.position.z);
+
+		for (unsigned int i = 0; i < 4; i++)
+		{
+			std::string index = std::to_string(i);
+
+			glm::vec3 aux = pointLightPositions[i] + glm::vec3(r*cos(time), 0, r*sin(time));
+
+			lightedProgram->SetUniform("pointLight[" + index + "].position", aux.x, aux.y, aux.z);
+		}
+	
+		lightedProgram->SetUniform("spotLight.position", camera.position.x, camera.position.y, camera.position.z);
+		lightedProgram->SetUniform("spotLight.direction", camera.front.x, camera.front.y, camera.front.z);
+
 
 		view = camera.GetViewMatrix();
 		projection = camera.GetProjectionMatrix();
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, cubePositions[1]);
-		model = glm::rotate(model, (float)time * glm::radians(50.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, scaleFactor[1]);
 
 		lightedProgram->TransformCoords(view, "view");
 		lightedProgram->TransformCoords(projection, "projection");
-		lightedProgram->TransformCoords(model, "model");
 
 		objVAO->OnOff(1);
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		for (unsigned int i = 0; i < 10; i++)
+		{
+			glm::mat4 model = glm::mat4(1.0f);
+			model = glm::translate(model, cubePositions[i]);
+			float angle = 20.0f * i;
+			model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+			lightedProgram->TransformCoords(model, "model");
+
+			glDrawArrays(GL_TRIANGLES, 0, 36);
+		}
+
 		objVAO->OnOff(0);
 
 
 
 		lightProgram->Use();
 
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, lightPos);
-		model = glm::rotate(model, (float)time * glm::radians(50.0f), glm::vec3(0.0f, 1.0f, 1.0f));
-		model = glm::scale(model, scaleFactor[2]);
-
 		lightProgram->TransformCoords(view, "view");
 		lightProgram->TransformCoords(projection, "projection");
-		lightProgram->TransformCoords(model, "model");
 
 		lightVAO->OnOff(1);
-		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+		for (unsigned int i = 0; i < 4; i++) {
+			model = glm::mat4(1.0f);
+			model = glm::translate(model, pointLightPositions[i] + glm::vec3(r*cos(time), 0, r*sin(time)));
+			model = glm::rotate(model, (float)time * glm::radians(50.0f), glm::vec3(0.0f, 1.0f, 1.0f));
+			model = glm::scale(model, scaleFactor[2]);
+
+			lightProgram->TransformCoords(model, "model");
+			glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+		}
+
 		lightVAO->OnOff(0);
 
 
