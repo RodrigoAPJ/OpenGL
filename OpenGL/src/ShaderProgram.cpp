@@ -17,42 +17,31 @@ void ShaderProgram::checkLink()
 	std::cout << "\t\t[DEBUG] Shader program SUCCESFULY LINKED\n";
 }
 
-ShaderProgram::ShaderProgram(std::vector<Shader*>& shaders)
+ShaderProgram::ShaderProgram(const char * vertexPath, const char * fragmentPath)
 {
 	// Creamos un Shader Program y guardamos su id
-	this->id = glCreateProgram();
+	id = glCreateProgram();
 	#ifdef DEBUG
 		std::cout << "\t[DEBUG] Shader Program CREATED \n";
 	#endif // DEBUG
 
-	// Adjuntamos todas las shaders EN ORDEN al program shader
-	for (int i = 0; i < shaders.size(); i++)
-	{
-		Shader* aux = shaders.at(i);
-		glAttachShader(this->id, aux->GetId());
-	}
-		
+	// Adjuntamos todas las shaders EN ORDEN al program shader	
+	Shader vertexShader   = Shader(vertexPath);
+	Shader fragmentShader = Shader(fragmentPath);
+
+	glAttachShader(this->id, vertexShader.GetId());
+	glAttachShader(this->id, fragmentShader.GetId());
 
 	// Linkeamos todas las shaders en un único Shader y buscamos errores
 	glLinkProgram(this->id);
 	this->checkLink();
-	
-	// Eliminamos shaders que ya no usaremos
-	for (int i = 0; i < shaders.size();)
-	{
-		Shader* aux = shaders.at(i);
-		shaders.erase(shaders.begin());
-
-		delete(aux);
-	}
-
 }
 
 ShaderProgram::~ShaderProgram()
 {
-#ifdef DEBUG
-	std::cout << "\t\t[DEBUG] Shader Program with id: " << this->id << " DELETED\n";
-#endif // DEBUG
+	#ifdef DEBUG
+		std::cout << "\t\t[DEBUG] Shader Program with id: " << this->id << " DELETED\n";
+	#endif // DEBUG
 
 	glDeleteProgram(this->id);
 }
@@ -67,7 +56,7 @@ void ShaderProgram::SetUniform(const std::string & name, T value)
 {
 	if (typeid(value) == typeid(float))
 		glUniform1f(glGetUniformLocation(this->id, name.c_str()), value);
-	else if (typeid(value) == typeid(int))
+	else if (typeid(value) == typeid(int) || typeid(value) == typeid(unsigned int))
 		glUniform1i(glGetUniformLocation(this->id, name.c_str()), value);
 	else
 	#ifdef DEBUG

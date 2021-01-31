@@ -1,0 +1,169 @@
+﻿  Application.cpp
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(700): error C2084: function 'int stbi__cpuid3(void)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(699): note: see previous definition of 'stbi__cpuid3'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(722): error C2084: function 'int stbi__sse2_available(void)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(721): note: see previous definition of 'stbi__sse2_available'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(723): error C2065: 'stbi__cpuid3': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(723): error C2440: 'initializing': cannot convert from 'int (__cdecl *)(void)' to 'int'
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(723): note: There is no context in which this conversion is possible
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(784): error C2371: 'stbi__context': redefinition; different basic types
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(784): note: see declaration of 'stbi__context'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(791): error C2084: function 'void stbi__start_mem(stbi__context *,const stbi_uc *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(790): note: see previous definition of 'stbi__start_mem'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(801): error C2084: function 'void stbi__start_callbacks(stbi__context *,stbi_io_callbacks *,void *)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(800): note: see previous definition of 'stbi__start_callbacks'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(815): error C2084: function 'int stbi__stdio_read(void *,char *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(814): note: see previous definition of 'stbi__stdio_read'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(820): error C2084: function 'void stbi__stdio_skip(void *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(819): note: see previous definition of 'stbi__stdio_skip'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(830): error C2084: function 'int stbi__stdio_eof(void *)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(829): note: see previous definition of 'stbi__stdio_eof'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(834): error C2374: 'stbi__stdio_callbacks': redefinition; multiple initialization
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(834): note: see declaration of 'stbi__stdio_callbacks'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(842): error C2084: function 'void stbi__start_file(stbi__context *,FILE *)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(841): note: see previous definition of 'stbi__start_file'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(843): error C2065: 'stbi__start_callbacks': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(851): error C2084: function 'void stbi__rewind(stbi__context *)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(850): note: see previous definition of 'stbi__rewind'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(861): error C2365: 'STBI_ORDER_RGB': redefinition; previous definition was 'enumerator'
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(861): note: see declaration of 'STBI_ORDER_RGB'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(863): error C2365: 'STBI_ORDER_BGR': redefinition; previous definition was 'enumerator'
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(862): note: see declaration of 'STBI_ORDER_BGR'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(870): error C2371: 'stbi__result_info': redefinition; different basic types
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(870): note: see declaration of 'stbi__result_info'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(933): error C2086: 'const char *stbi__g_failure_reason': redefinition
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(933): note: see declaration of 'stbi__g_failure_reason'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(936): error C2084: function 'const char *stbi_failure_reason(void)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(935): note: see previous definition of 'stbi_failure_reason'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(941): warning C4003: not enough arguments for function-like macro invocation 'stbi__err'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(942): error C2084: function 'int stbi__err(const char *)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(941): note: see previous definition of 'stbi__err'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(949): error C2084: function 'void *stbi__malloc(size_t)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(948): note: see previous definition of 'stbi__malloc'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(966): error C2084: function 'int stbi__addsizes_valid(int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(965): note: see previous definition of 'stbi__addsizes_valid'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(978): error C2084: function 'int stbi__mul2sizes_valid(int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(977): note: see previous definition of 'stbi__mul2sizes_valid'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(988): error C2084: function 'int stbi__mad2sizes_valid(int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(987): note: see previous definition of 'stbi__mad2sizes_valid'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(989): error C2065: 'stbi__mul2sizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(989): error C2065: 'stbi__addsizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(989): warning C4551: function call missing argument list
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(989): error C2568: '&&': unable to resolve function overload
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(989): note: could be 'int stbi__addsizes_valid(int,int)'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(995): error C2084: function 'int stbi__mad3sizes_valid(int,int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(994): note: see previous definition of 'stbi__mad3sizes_valid'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(996): error C2065: 'stbi__mul2sizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(996): warning C4551: function call missing argument list
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(996): error C2568: '&&': unable to resolve function overload
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(996): note: could be 'int stbi__mul2sizes_valid(int,int)'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(997): error C2065: 'stbi__addsizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1003): error C2084: function 'int stbi__mad4sizes_valid(int,int,int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1002): note: see previous definition of 'stbi__mad4sizes_valid'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1004): error C2065: 'stbi__mul2sizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1004): warning C4551: function call missing argument list
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1004): error C2568: '&&': unable to resolve function overload
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1004): note: could be 'int stbi__mul2sizes_valid(int,int)'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1005): error C2065: 'stbi__mul2sizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1005): error C2065: 'stbi__addsizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1012): error C2084: function 'void *stbi__malloc_mad2(int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1011): note: see previous definition of 'stbi__malloc_mad2'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1013): error C2065: 'stbi__mad2sizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1013): warning C4551: function call missing argument list
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1014): error C2065: 'stbi__malloc': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1019): error C2084: function 'void *stbi__malloc_mad3(int,int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1018): note: see previous definition of 'stbi__malloc_mad3'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1020): error C2065: 'stbi__mad3sizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1020): warning C4551: function call missing argument list
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1021): error C2065: 'stbi__malloc': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1026): error C2084: function 'void *stbi__malloc_mad4(int,int,int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1025): note: see previous definition of 'stbi__malloc_mad4'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1027): error C2065: 'stbi__mad4sizes_valid': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1027): warning C4551: function call missing argument list
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1028): error C2065: 'stbi__malloc': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1048): error C2084: function 'void stbi_image_free(void *)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1047): note: see previous definition of 'stbi_image_free'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1060): error C2374: 'stbi__vertically_flip_on_load_global': redefinition; multiple initialization
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1060): note: see declaration of 'stbi__vertically_flip_on_load_global'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1063): error C2084: function 'void stbi_set_flip_vertically_on_load(int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1062): note: see previous definition of 'stbi_set_flip_vertically_on_load'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1070): error C2086: 'int stbi__vertically_flip_on_load_local': redefinition
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1070): note: see declaration of 'stbi__vertically_flip_on_load_local'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1070): error C2086: 'int stbi__vertically_flip_on_load_set': redefinition
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1070): note: see declaration of 'stbi__vertically_flip_on_load_set'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1073): error C2084: function 'void stbi_set_flip_vertically_on_load_thread(int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1072): note: see previous definition of 'stbi_set_flip_vertically_on_load_thread'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1084): error C2084: function 'void *stbi__load_main(stbi__context *,int *,int *,int *,int,stbi__result_info *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1083): note: see previous definition of 'stbi__load_main'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1127): error C2065: 'stbi__err': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1131): error C2084: function 'stbi_uc *stbi__convert_16_to_8(stbi__uint16 *,int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1130): note: see previous definition of 'stbi__convert_16_to_8'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1136): error C2065: 'stbi__malloc': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1137): error C2065: 'stbi__err': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1147): error C2084: function 'stbi__uint16 *stbi__convert_8_to_16(stbi_uc *,int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1146): note: see previous definition of 'stbi__convert_8_to_16'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1152): error C2065: 'stbi__malloc': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1153): error C2065: 'stbi__err': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1163): error C2084: function 'void stbi__vertical_flip(void *,int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1162): note: see previous definition of 'stbi__vertical_flip'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1188): error C2084: function 'void stbi__vertical_flip_slices(void *,int,int,int,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1187): note: see previous definition of 'stbi__vertical_flip_slices'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1194): error C2065: 'stbi__vertical_flip': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1201): error C2084: function 'unsigned char *stbi__load_and_postprocess_8bit(stbi__context *,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1200): note: see previous definition of 'stbi__load_and_postprocess_8bit'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1203): error C2065: 'stbi__load_main': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1212): error C2065: 'stbi__convert_16_to_8': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1212): error C2568: '=': unable to resolve function overload
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1212): note: could be 'stbi_uc *stbi__convert_16_to_8(stbi__uint16 *,int,int,int)'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1220): error C2065: 'stbi__vertical_flip': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1227): error C2084: function 'stbi__uint16 *stbi__load_and_postprocess_16bit(stbi__context *,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1226): note: see previous definition of 'stbi__load_and_postprocess_16bit'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1229): error C2065: 'stbi__load_main': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1238): error C2065: 'stbi__convert_8_to_16': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1238): error C2568: '=': unable to resolve function overload
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1238): note: could be 'stbi__uint16 *stbi__convert_8_to_16(stbi_uc *,int,int,int)'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1247): error C2065: 'stbi__vertical_flip': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1255): error C2084: function 'void stbi__float_postprocess(float *,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1254): note: see previous definition of 'stbi__float_postprocess'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1258): error C2065: 'stbi__vertical_flip': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1278): error C2084: function 'FILE *stbi__fopen(const char *,const char *)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1277): note: see previous definition of 'stbi__fopen'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1307): error C2084: function 'stbi_uc *stbi_load(const char *,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1306): note: see previous definition of 'stbi_load'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1308): error C2065: 'stbi__fopen': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1308): error C2440: 'initializing': cannot convert from 'FILE *(__cdecl *)(const char *,const char *)' to 'FILE *'
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1308): note: There is no context in which this conversion is possible
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1310): error C2065: 'stbi__err': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1317): error C2084: function 'stbi_uc *stbi_load_from_file(FILE *,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1316): note: see previous definition of 'stbi_load_from_file'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1320): error C2065: 'stbi__start_file': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1321): error C2065: 'stbi__load_and_postprocess_8bit': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1321): error C2568: '=': unable to resolve function overload
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1321): note: could be 'unsigned char *stbi__load_and_postprocess_8bit(stbi__context *,int *,int *,int *,int)'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1330): error C2084: function 'stbi_us *stbi_load_from_file_16(FILE *,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1329): note: see previous definition of 'stbi_load_from_file_16'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1333): error C2065: 'stbi__start_file': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1334): error C2065: 'stbi__load_and_postprocess_16bit': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1334): error C2568: '=': unable to resolve function overload
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1334): note: could be 'stbi__uint16 *stbi__load_and_postprocess_16bit(stbi__context *,int *,int *,int *,int)'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1343): error C2084: function 'stbi_us *stbi_load_16(const char *,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1342): note: see previous definition of 'stbi_load_16'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1344): error C2065: 'stbi__fopen': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1344): error C2440: 'initializing': cannot convert from 'FILE *(__cdecl *)(const char *,const char *)' to 'FILE *'
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1344): note: There is no context in which this conversion is possible
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1346): error C2065: 'stbi__err': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1347): error C2065: 'stbi_load_from_file_16': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1347): error C2568: '=': unable to resolve function overload
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1347): note: could be 'stbi_us *stbi_load_from_file_16(FILE *,int *,int *,int *,int)'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1356): error C2084: function 'stbi_us *stbi_load_16_from_memory(const stbi_uc *,int,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1355): note: see previous definition of 'stbi_load_16_from_memory'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1358): error C2065: 'stbi__start_mem': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1359): error C2065: 'stbi__load_and_postprocess_16bit': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1363): error C2084: function 'stbi_us *stbi_load_16_from_callbacks(const stbi_io_callbacks *,void *,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1362): note: see previous definition of 'stbi_load_16_from_callbacks'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1365): error C2065: 'stbi__start_callbacks': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1366): error C2065: 'stbi__load_and_postprocess_16bit': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1370): error C2084: function 'stbi_uc *stbi_load_from_memory(const stbi_uc *,int,int *,int *,int *,int)' already has a body
+  c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1369): note: see previous definition of 'stbi_load_from_memory'
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1372): error C2065: 'stbi__start_mem': undeclared identifier
+c:\dev\opengl\dependencies\include\stb_image\stb_image.h(1372): fatal error C1003: error count exceeds 100; stopping compilation

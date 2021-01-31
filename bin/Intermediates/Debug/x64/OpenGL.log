@@ -1,5 +1,5 @@
 ﻿  Application.cpp
-c:\dev\opengl\opengl\src\hdr\camera.h(23): warning C4091: 'static ': se ha omitido a la izquierda de 'Camera::Camera_Movement' cuando no hay ninguna variable declarada
-c:\dev\opengl\opengl\src\application.cpp(276): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\dev\opengl\opengl\src\application.cpp(277): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\dev\opengl\opengl\src\hdr\camera.h(23): warning C4091: 'static ': ignored on left of 'Camera::Camera_Movement' when no variable is declared
+c:\dev\opengl\opengl\src\application.cpp(118): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\dev\opengl\opengl\src\application.cpp(119): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   OpenGL.vcxproj -> C:\dev\OpenGL\bin\Debug\x64\OpenGL.exe

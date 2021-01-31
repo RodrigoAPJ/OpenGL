@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+
 enum class Usage {
 	setOnce_usedFewTimes = GL_DYNAMIC_DRAW,
 	setOnce_usedManyTimes = GL_STATIC_DRAW,

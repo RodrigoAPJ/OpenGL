@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -11,10 +11,9 @@ class ShaderProgram
 {
 private:
 	unsigned int id;
-	unsigned int height = 0;
 	void checkLink();
 public:
-	ShaderProgram(std::vector<Shader*>& shaders);
+	ShaderProgram(const char* vertexPath, const char* fragmentPath);
 	~ShaderProgram();
 
 	unsigned int GetId() { return this->id; }
@@ -37,4 +36,5 @@ template void ShaderProgram::SetUniform<int>(const std::string &name, int value0
 template void ShaderProgram::SetUniform<float>(const std::string &name, float value0, float value1, float value2);
 
 template void ShaderProgram::SetUniform(const std::string &name, int value);
+template void ShaderProgram::SetUniform(const std::string &name, unsigned int value);
 template void ShaderProgram::SetUniform(const std::string &name, float value);
